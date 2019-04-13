@@ -1,4 +1,4 @@
-package eventhandler
+package gull
 
 import "testing"
 

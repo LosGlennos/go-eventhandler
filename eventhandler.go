@@ -1,4 +1,4 @@
-package eventhandler
+package gull
 
 type event struct {
 	s string
