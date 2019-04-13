@@ -9,14 +9,14 @@ Will register all events, and fire them as goroutines when `EmitEvent` is called
 import "github.com/losglennos/gull"
 
 func SubscribeEvent() {
-	eventhandler.Subscribe("hello", hello)
+	eventhandler.Subscribe("foo", bar)
 }
 
 func EmitEvent() {
-	eventhandler.EmitEvent("hello")
+	eventhandler.EmitEvent("foo")
 }
 
-func hello() {
+func bar() {
 	//run this function on event
 }
 ```
