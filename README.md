@@ -6,7 +6,7 @@ Will register all events, and fire them as goroutines when `EmitEvent` is called
 # Usage
 
 ```go
-import "github.com/losglennos/gull/eventhandler"
+import "github.com/losglennos/gull"
 
 func SubscribeEvent() {
 	eventhandler.Subscribe("hello", hello)
