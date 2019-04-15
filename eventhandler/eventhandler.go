@@ -1,4 +1,4 @@
-package gull
+package eventhandler
 
 import (
 	"errors"
@@ -12,10 +12,10 @@ type event struct {
 
 type fn func()
 
-var eventHandlers = []event{}
+var eventHandlers []event
 
 func EmitEvent(s string) (int, error){
-	var selectedEvents = []fn{}
+	var selectedEvents []fn
 	for _, event := range eventHandlers{
 		if event.s == s {
 			selectedEvents = append(selectedEvents, event.f)
