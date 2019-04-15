@@ -1,4 +1,4 @@
-package eventhandler
+package go_eventhandler
 
 import (
 	"errors"
