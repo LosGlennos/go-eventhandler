@@ -13,7 +13,7 @@ func SubscribeEvent() {
 }
 
 func EmitEvent() {
-	eventhandler.EmitEvent("foo")
+	i, e := eventhandler.EmitEvent("foo")
 }
 
 func bar() {
