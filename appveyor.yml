@@ -1,9 +1,9 @@
 build: off
 
-clone_folder: /usr/go/src/github.com/LosGlennos/go-eventhandler
+clone_folder: c:\gopath\src\github.com\LosGlennos\go-eventhandler
 
 environment:
-  GOPATH: /usr/go/
+  GOPATH: c:\gopath
 
 stack: go 1.10
 
