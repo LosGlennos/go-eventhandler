@@ -1,3 +1,5 @@
+![Build status](https://ci.appveyor.com/api/projects/status/6vv0gorlpag2m1dk?svg=true)
+
 # go-eventhandler
 A small eventhandling library for Go. 
 
