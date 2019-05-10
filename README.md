@@ -11,11 +11,11 @@ Will register all events, and fire them as goroutines when `EmitEvent` is called
 import "github.com/losglennos/go-eventhandler"
 
 func SubscribeEvent() {
-	eventhandler.Subscribe("foo", bar)
+	err := eventhandler.Subscribe("foo", bar)
 }
 
 func EmitEvent() {
-	i, e := eventhandler.EmitEvent("foo")
+	i, err := eventhandler.EmitEvent("foo")
 }
 
 func bar() {
