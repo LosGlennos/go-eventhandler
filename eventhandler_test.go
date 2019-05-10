@@ -44,6 +44,17 @@ func TestEmitEventError(t *testing.T) {
 	}
 }
 
+func TestOnlyOneSubscriptionPerFunction(t *testing.T) {
+	Subscribe("testcountsamefunction", happen)
+	Subscribe("testcountsamefunction", happen)
+
+	i, _ := EmitEvent("testcountsamefunction")
+
+	if i != 1 {
+		t.Errorf("Should have been 1, was: %d", i)
+	}
+}
+
 func happen() {
 	a = 1
 }
