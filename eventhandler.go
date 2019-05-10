@@ -19,6 +19,7 @@ var eventHandlers []event
 
 //EmitEvent will fire the event specified and the functions that has been registered with that event.
 //The events will be fired as go-routines.
+//Returns the number of events fired, and will return error if there is no event registered for the string provided.
 func EmitEvent(s string) (int, error){
 	var selectedEvents []fn
 	for _, event := range eventHandlers{
@@ -39,7 +40,7 @@ func EmitEvent(s string) (int, error){
 }
 
 //Subscribe will add the event specified together with a function that later can be fired using EmitEvent.
-//You will not be able to add the same combination multiple times.
+//Returns error if the application tries to add the same combination multiple times.
 func Subscribe(s string, f fn) error {
 	err := checkIfSameEventAlreadyRegistered(s, f)
 	if (err != nil) {
@@ -61,5 +62,6 @@ func checkIfSameEventAlreadyRegistered(s string, f fn) error {
 }
 
 func getFunctionName (f fn) string {
-	return runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
+	name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
+	return name
 }
